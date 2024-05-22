@@ -66,7 +66,7 @@ const Header = () => {
   return (
     <div className="fixed w-[100%] flex flex-col items-center shadow bg-white">
       <div className="w-[1467px]">
-        <header className="">
+        <header className="container">
           <nav
             className="flex items-center justify-between"
             aria-label="Global"

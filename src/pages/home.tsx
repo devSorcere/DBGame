@@ -9,6 +9,13 @@ import {
 } from "@ant-design/icons";
 import Button from "../components/button";
 import { useState } from "react";
+import obSports from "../assets/video/ob-sports.mp4";
+import liveCasino from "../assets/video/DB_live_casino.mp4";
+import db_games from "../assets/images/db_games_sports2.png";
+import heguan_new from "../assets/images/heguan_new.png";
+import dianjing from "../assets/images/dianjing.png";
+import qipai from "../assets/images/qipai.png";
+import caipiao from "../assets/images/caipiao.png";
 
 const Home = () => {
   const [selectItem, setSelectItem] = useState("SPORTS");
@@ -36,8 +43,8 @@ const Home = () => {
         "Majority Matches Coverage",
         "Majority Matches Coverage",
       ],
-      video: "https://dbgaming.com/video/ob-sports.mp4",
-      img: "https://dbgaming.com/img/games/db_games_sports2.png",
+      video: obSports,
+      img: db_games,
     },
     {
       id: "LIVE CASINO",
@@ -52,8 +59,8 @@ const Home = () => {
         "Majority Matches Coverage",
         "Majority Matches Coverage",
       ],
-      video: "https://dbgaming.com/video/DB_live_casino.mp4",
-      img: "https://dbgaming.com/img/heguan_new.png",
+      video: liveCasino,
+      img: heguan_new,
     },
     {
       id: "E-SPORTS",
@@ -68,8 +75,8 @@ const Home = () => {
         "Majority Matches Coverage",
         "Majority Matches Coverage",
       ],
-      video: "https://dbgaming.com/video/ob-sports.mp4",
-      img: "https://dbgaming.com/img/dianjing.png",
+      video: obSports,
+      img: dianjing,
     },
     {
       id: "POKER GAMES",
@@ -84,8 +91,8 @@ const Home = () => {
         "Majority Matches Coverage",
         "Majority Matches Coverage",
       ],
-      video: "https://dbgaming.com/video/ob-gambling.mp4",
-      img: "https://dbgaming.com/img/qipai.png",
+      video: liveCasino,
+      img: qipai,
     },
     {
       id: "LOTTERY",
@@ -100,8 +107,8 @@ const Home = () => {
         "Majority Matches Coverage",
         "Majority Matches Coverage",
       ],
-      video: "https://dbgaming.com/video/ob-sports.mp4",
-      img: "https://dbgaming.com/img/caipiao.png",
+      video: obSports,
+      img: caipiao,
     },
     {
       id: "SLOTS",
@@ -116,8 +123,8 @@ const Home = () => {
         "Majority Matches Coverage",
         "Majority Matches Coverage",
       ],
-      video: "https://dbgaming.com/video/ob-sports.mp4",
-      img: "https://dbgaming.com/img/games/db_games_sports2.png",
+      video: liveCasino,
+      img: db_games,
     },
     {
       id: "BLOCKCHAIN HASH",
@@ -132,8 +139,8 @@ const Home = () => {
         "Majority Matches Coverage",
         "Majority Matches Coverage",
       ],
-      video: "https://dbgaming.com/video/ob-sports.mp4",
-      img: "https://dbgaming.com/img/games/db_games_sports2.png",
+      video: obSports,
+      img: db_games,
     },
     {
       id: "Scratch Cards",
@@ -148,15 +155,14 @@ const Home = () => {
         "Majority Matches Coverage",
         "Majority Matches Coverage",
       ],
-      video: "https://dbgaming.com/video/ob-sports.mp4",
-      img: "https://dbgaming.com/img/games/db_games_sports2.png",
+      video: liveCasino,
+      img: db_games,
     },
   ];
 
   return (
     <div className="">
-      <section className="video flex flex-col justify-center items-center relative text-white pb-[290px]">
-        <div className="z-[-1] absolute left-0 top-0 w-[100%] h-[100%] overlay"></div>
+      <section className="video flex flex-col justify-center items-center relative text-white">
         <h2 className="text-[36px] font-medium">Product</h2>
         <div className="line ">
           <span className="bg-[#ffc10f]"></span>
@@ -166,13 +172,12 @@ const Home = () => {
         <div className="flex justify-center py-2 flex-wrap relative">
           {menuItems.map((item, index) => (
             <div
+              key={item.label}
               onClick={() => {
                 setSelectItem(item.label);
               }}
               className="cursor-pointer relative w-[155px] flex flex-col justify-center items-center mx-[-11px] px-5 py-3"
             >
-              <img src="" alt="" />
-              <img src="" alt="" />
               {selectItem === item.label && (
                 <img
                   width={"100%"}
@@ -206,6 +211,9 @@ const Home = () => {
                 autoPlay
                 loop
               >
+                <div className="relative">
+                  <div className="z-[-1] absolute left-0 top-0 w-[100%] h-[100%] overlay"></div>
+                </div>
                 <img src="https://dbgaming.com/img/sports111.png" alt="" />
               </video>
             </div>

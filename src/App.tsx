@@ -13,8 +13,7 @@ function App() {
           <Home />
         </div>
       </div>
-
-    </div >
+    </div>
   );
 }
 

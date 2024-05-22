@@ -1,5 +1,5 @@
-import { Dropdown, Space, Select, ConfigProvider } from "antd";
-import { CaretDownOutlined, CaretUpOutlined } from "@ant-design/icons";
+import { Dropdown, Space, Select } from "antd";
+import { CaretDownOutlined } from "@ant-design/icons";
 import Flag from "react-world-flags";
 import "../assets/styles/header.css";
 const Header = () => {
@@ -27,7 +27,6 @@ const Header = () => {
       ),
     };
   });
-  console.log(country_item);
 
   const items = [
     {
@@ -61,7 +60,7 @@ const Header = () => {
       key: "2",
     },
   ];
-  const handleChange = (value) => {
+  const handleChange = (value: string) => {
     console.log(`selected ${value}`);
   };
   return (
@@ -73,13 +72,11 @@ const Header = () => {
             aria-label="Global"
           >
             <div className="">
-              <a href="#" className="">
-                <img
-                  className="w-[169px] h-[49px]"
-                  src="https://dbgaming.com/img/en/db_logo.png"
-                  alt=""
-                />
-              </a>
+              <img
+                className="w-[169px] h-[49px]"
+                src="https://dbgaming.com/img/en/db_logo.png"
+                alt=""
+              />
             </div>
             <div>
               <ul className="flex flex-row nav items-center">
@@ -93,12 +90,10 @@ const Header = () => {
                     }}
                     trigger={["click"]}
                   >
-                    <a onClick={(e) => e.preventDefault()}>
-                      <Space>
-                        Sub-line products
-                        <CaretDownOutlined />
-                      </Space>
-                    </a>
+                    <Space>
+                      Sub-line products
+                      <CaretDownOutlined />
+                    </Space>
                   </Dropdown>
                 </li>
                 <li>Collaboration</li>
@@ -110,16 +105,10 @@ const Header = () => {
                     }}
                     trigger={["click"]}
                   >
-                    <a
-                      onClick={(e) => {
-                        e.preventDefault();
-                      }}
-                    >
-                      <Space>
-                        Latest News
-                        <CaretDownOutlined />
-                      </Space>
-                    </a>
+                    <Space>
+                      Latest News
+                      <CaretDownOutlined />
+                    </Space>
                   </Dropdown>
                 </li>
                 <li>About Us</li>
@@ -128,7 +117,7 @@ const Header = () => {
                 <Select
                   className="border-none"
                   defaultValue="us"
-                  style={{ width: "auto", outLine: "none" }}
+                  style={{ width: "auto" }}
                   onChange={handleChange}
                   options={country_item}
                 />

@@ -44,3 +44,7 @@
         transform: translateY(0%);
     }
 }
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+}

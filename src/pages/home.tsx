@@ -9,7 +9,6 @@ import {
 } from "@ant-design/icons";
 import Button from "../components/button";
 import { useState } from "react";
-import { Animated } from "react-animated-css";
 
 const Home = () => {
   const [selectItem, setSelectItem] = useState("SPORTS");
@@ -156,7 +155,8 @@ const Home = () => {
 
   return (
     <div className="">
-      <section className="video flex flex-col justify-center items-center relative text-white">
+      <section className="video flex flex-col justify-center items-center relative text-white pb-[150px]">
+        <div className="z-[-1] absolute left-0 top-0 w-[100%] h-[100%] overlay"></div>
         <h2 className="text-[36px] font-medium">Product</h2>
         <div className="line ">
           <span className="bg-[#ffc10f]"></span>
@@ -173,7 +173,7 @@ const Home = () => {
             >
               <img src="" alt="" />
               <img src="" alt="" />
-              {selectItem == item.label && (
+              {selectItem === item.label && (
                 <img
                   width={"100%"}
                   className="absolute"
@@ -181,7 +181,7 @@ const Home = () => {
                   alt=""
                 />
               )}
-              {selectItem != item.label && (
+              {selectItem !== item.label && (
                 <img
                   width={"100%"}
                   className="absolute"
@@ -196,45 +196,50 @@ const Home = () => {
           ))}
         </div>
 
-        {videoData
-          //   .filter((item) => item.id == selectItem)
-          .map((data) => (
-            <div className={data.id == selectItem ? "block" : "hidden"}>
-              <div className="z-[-1] absolute left-0 top-0">
-                <video src={data.video} muted autoPlay loop>
-                  <img src="https://dbgaming.com/img/sports111.png" alt="" />
-                </video>
+        {videoData.map((data) => (
+          <div className={data.id === selectItem ? "block" : "hidden"}>
+            <div className="z-[-2] absolute left-0 top-0">
+              <video
+                className="w-[100%] h-[100%]"
+                src={data.video}
+                muted
+                autoPlay
+                loop
+              >
+                <img src="https://dbgaming.com/img/sports111.png" alt="" />
+              </video>
+            </div>
+
+            <div className="left-panel  flex justify-start  ml-[-300px] ">
+              <div className="animation translate-y-[50%] opacity-0">
+                <div className={"text-[29px] mb-[49px] "}>{data.title}</div>
+                <div className="text-[17px] w-[552px] mb-[63px]">
+                  {data.content}
+                </div>
+                <div className="grid grid-cols-2">
+                  {data.list.map((item) => (
+                    <div className="flex items-center mb-[32px]">
+                      <img
+                        src="https://dbgaming.com/img/tuoyuanxing.png"
+                        className="w-[16px] h-[16px]"
+                        alt=""
+                      />
+                      <span className="ml-[7px]">{item}</span>
+                    </div>
+                  ))}
+                  <Button text={"Try now"} />
+                </div>
               </div>
-              <div className="left-panel  flex justify-start  ml-[-300px] ">
-                <div className="animation translate-y-[50%] opacity-0">
-                  <div className={"text-[29px] mb-[49px] "}>{data.title}</div>
-                  <div className="text-[17px] w-[552px] mb-[63px]">
-                    {data.content}
-                  </div>
-                  <div className="grid grid-cols-2">
-                    {data.list.map((item) => (
-                      <div className="flex items-center mb-[32px]">
-                        <img
-                          src="https://dbgaming.com/img/tuoyuanxing.png"
-                          className="w-[16px] h-[16px]"
-                          alt=""
-                        />
-                        <span className="ml-[7px]">{item}</span>
-                      </div>
-                    ))}
-                    <Button text={"Try now"} />
-                  </div>
-                </div>
-                <div>
-                  <img
-                    className="absolute mt-[60px] top-[130px] right-[0] w-[532px] img-animation"
-                    src={data.img}
-                    alt=""
-                  />
-                </div>
+              <div>
+                <img
+                  className="absolute mt-[60px] top-[130px] right-[0] w-[532px] img-animation"
+                  src={data.img}
+                  alt=""
+                />
               </div>
             </div>
-          ))}
+          </div>
+        ))}
       </section>
     </div>
   );

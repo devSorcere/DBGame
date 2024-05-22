@@ -1,0 +1,21 @@
+.nav>li {
+    font-size: 14px;
+    height: 73px;
+    margin: 0 20px;
+    padding: 0 5px 3px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.nav>li:hover {
+    color: #ff5c26;
+    transform: scale(1.2);
+    transition: all .2s ease-in;
+}
+
+.ant-select-selector {
+    /* border: 1px solid #d9d9d9; */
+    border: none !important;
+    background: #ffffff;
+}

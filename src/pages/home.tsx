@@ -155,7 +155,7 @@ const Home = () => {
 
   return (
     <div className="">
-      <section className="video flex flex-col justify-center items-center relative text-white pb-[150px]">
+      <section className="video flex flex-col justify-center items-center relative text-white pb-[290px]">
         <div className="z-[-1] absolute left-0 top-0 w-[100%] h-[100%] overlay"></div>
         <h2 className="text-[36px] font-medium">Product</h2>
         <div className="line ">

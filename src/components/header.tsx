@@ -64,9 +64,9 @@ const Header = () => {
     console.log(`selected ${value}`);
   };
   return (
-    <div className="fixed w-[100%] flex flex-col items-center shadow bg-white">
+    <div className="fixed z-[10000] w-[100%] flex flex-col items-center shadow bg-white">
       <div className="w-[1467px]">
-        <header className="container">
+        <header className="container mx-auto block hidden lg:block">
           <nav
             className="flex items-center justify-between"
             aria-label="Global"
@@ -113,6 +113,32 @@ const Header = () => {
                 </li>
                 <li>About Us</li>
                 <li>Contact Us</li>
+                <li>Careers</li>
+                <Select
+                  className="border-none"
+                  defaultValue="us"
+                  style={{ width: "auto" }}
+                  onChange={handleChange}
+                  options={country_item}
+                />
+              </ul>
+            </div>
+          </nav>
+        </header>
+        <header className="container mx-auto block lg:hidden">
+          <nav
+            className="flex items-center justify-between"
+            aria-label="Global"
+          >
+            <div className="">
+              <img
+                className="w-[169px] h-[49px]"
+                src="https://dbgaming.com/img/en/db_logo.png"
+                alt=""
+              />
+            </div>
+            <div>
+              <ul className="flex flex-row nav items-center">
                 <li>Careers</li>
                 <Select
                   className="border-none"
